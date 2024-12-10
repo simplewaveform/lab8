@@ -1,6 +1,8 @@
 #include <memory>
 #include "Person.h"
 
+#pragma once
+
 using namespace std;
 
 class Sorter {
