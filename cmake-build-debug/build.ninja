@@ -61,18 +61,6 @@ build CMakeFiles/lab8.dir/Person.cpp.o: CXX_COMPILER__lab8_unscanned_Debug /User
   OBJECT_DIR = CMakeFiles/lab8.dir
   OBJECT_FILE_DIR = CMakeFiles/lab8.dir
 
-build CMakeFiles/lab8.dir/Sorter.cpp.o: CXX_COMPILER__lab8_unscanned_Debug /Users/simple_waveform/Documents/programming/3/lab8/Sorter.cpp || cmake_object_order_depends_target_lab8
-  DEP_FILE = CMakeFiles/lab8.dir/Sorter.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/lab8.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab8.dir
-
-build CMakeFiles/lab8.dir/Factory.cpp.o: CXX_COMPILER__lab8_unscanned_Debug /Users/simple_waveform/Documents/programming/3/lab8/Factory.cpp || cmake_object_order_depends_target_lab8
-  DEP_FILE = CMakeFiles/lab8.dir/Factory.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/lab8.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab8.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab8
@@ -81,7 +69,7 @@ build CMakeFiles/lab8.dir/Factory.cpp.o: CXX_COMPILER__lab8_unscanned_Debug /Use
 #############################################
 # Link the executable lab8
 
-build lab8: CXX_EXECUTABLE_LINKER__lab8_Debug CMakeFiles/lab8.dir/main.cpp.o CMakeFiles/lab8.dir/Person.cpp.o CMakeFiles/lab8.dir/Sorter.cpp.o CMakeFiles/lab8.dir/Factory.cpp.o
+build lab8: CXX_EXECUTABLE_LINKER__lab8_Debug CMakeFiles/lab8.dir/main.cpp.o CMakeFiles/lab8.dir/Person.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/lab8.dir
   POST_BUILD = :

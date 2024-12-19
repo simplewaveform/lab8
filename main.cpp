@@ -1,7 +1,6 @@
 #include "Container.h"
 #include "Person.h"
-#include "Sorter.h"
-#include <iostream>
+#include "Logger.h"
 
 int main() {
 
@@ -11,30 +10,48 @@ int main() {
     auto person2 = std::make_shared<Student>("Андрей", 19, "БГУИР");
     auto person3 = std::make_shared<GradStudent>("Петров", 17, "БНТУ", "Приборы");
 
+    std::cout << (people.empty() ? "Контейнер пуст": "Контейнер не пуст") << std::endl;
+    people.printAll();
+
     people.add(person1);
     people.add(person2);
     people.add(person3);
 
-    std::cout << "Список людей до сортировки:" << std::endl;
+    Logger::log("\nСписок людей до сортировки:");
     people.printAll();
 
     people.sort();
 
-    std::cout << "\nСписок людей после сортировки:" << std::endl;
+    Logger::log("\nСписок людей после сортировки:");
     people.printAll();
 
-    std::cout << "\nУдаление первого элемента:" << std::endl;
+    Logger::log("\nРазмер контейнера:");
+    std::cout << people.size() << std::endl;
+
+    Logger::log("Удаление первого элемента:");
     auto it = people.begin();
+    people.addActiveIterator(it);
     people.remove(it);
     people.printAll();
+    (*it)->print();
 
-    std::cout << "\nУдаление последнего элемента (хвоста):" << std::endl;
-    it = people.begin();
-    ++it;
-    people.remove(it);
+    Logger::log("\nВозвращение к состоянию после сортировки:");
+    people.clear();
+    people.add(person1);
+    people.add(person2);
+    people.add(person3);
     people.printAll();
 
-    std::cout << "\nДобавление нового элемента после удаления:" << std::endl;
+    Logger::log("Удаление последнего элемента (хвоста):");
+    auto it1 = std::prev(people.end());
+    people.addActiveIterator(it1);
+    people.remove(it1);
+    people.printAll();
+    (*it1)->print();
+
+    std::cout << (people.empty() ? "Контейнер пуст": "Контейнер не пуст") << std::endl;
+
+    Logger::log("\nДобавление нового элемента после удаления:");
     auto person4 = std::make_shared<Person>("Сергей", 25);
     people.add(person4);
     people.printAll();

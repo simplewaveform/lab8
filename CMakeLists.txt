@@ -7,9 +7,6 @@ add_executable(lab8 main.cpp
         Person.cpp
         Person.h
         Container.h
-        Sorter.cpp
         Sorter.h
-        Factory.cpp
-        Factory.h
         IPrintable.h
         Logger.h)

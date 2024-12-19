@@ -1,12 +1,16 @@
-#include <memory>
-#include "Person.h"
-
 #pragma once
 
-using namespace std;
+#include "Person.h"
 
 class Sorter {
 public:
-    static bool compareByAge(const shared_ptr<Person>& a, const shared_ptr<Person>& b);
+    template <typename U>
+    static bool compare(const U& a, const U& b) {
+        if constexpr (std::is_same_v<U, std::shared_ptr<Person>>) {
+            return a->getAge() < b->getAge();
+        } else {
+            return a < b;
+        }
+    }
 
 };
